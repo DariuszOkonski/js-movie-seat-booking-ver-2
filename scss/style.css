@@ -23,6 +23,24 @@ body {
           align-items: center;
 }
 
+#movieContainer {
+  text-align: center;
+  margin: 20px 0 40px;
+}
+
+#movieContainer label, #movieContainer select {
+  font-size: 1.2rem;
+}
+
+#movieContainer label {
+  margin-right: 10px;
+}
+
+#movieContainer select {
+  padding: 5px;
+  border-radius: 5px;
+}
+
 #showcaseContainer {
   display: -webkit-box;
   display: -ms-flexbox;
