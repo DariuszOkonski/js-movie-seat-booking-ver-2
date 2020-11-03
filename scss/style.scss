@@ -12,6 +12,27 @@ body {
 
     width: 100%;
     min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#showcaseContainer {
+    display: flex;
+
+    .showcase {
+        display: flex;
+    }
+}
+
+#seatsContainer {
+    display: flex;
+    flex-direction: column;
+
+    .row {
+        display: flex;
+    }
 }
 
 .seat {
