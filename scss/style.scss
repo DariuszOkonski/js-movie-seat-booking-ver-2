@@ -37,10 +37,21 @@ body {
 }
 
 #showcaseContainer {
+    background-color: #16181f;
+    padding: 5px 10px;
+    margin-bottom: 20px;
     display: flex;
+    align-items: center;
+    justify-content: space-between;
 
     .showcase {
         display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .seat {
+            margin-right: 5px;
+        }
     }
 }
 
