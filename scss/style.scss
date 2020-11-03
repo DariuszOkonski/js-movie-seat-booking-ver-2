@@ -55,6 +55,19 @@ body {
     }
 }
 
+#screenContainer {
+    perspective: 1000px;
+
+    .screen {
+        transform: rotateX(-50deg);
+        width: 100%;
+        height: 100px;
+        background-color: #fff;
+        margin-bottom: 50px;
+        box-shadow: 0px 0px 15px 5px rgba(255,255,255,0.71);
+    }
+}
+
 #seatsContainer {
     display: flex;
     flex-direction: column;
