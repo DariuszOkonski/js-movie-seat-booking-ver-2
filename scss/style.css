@@ -13,4 +13,21 @@ body {
   width: 100%;
   min-height: 100vh;
 }
+
+.seat {
+  background-color: #383b47;
+  width: 25px;
+  height: 20px;
+  margin: 5px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.seat.selected {
+  background-color: #224ab8;
+}
+
+.seat.occupied {
+  background-color: #bebbbb;
+}
 /*# sourceMappingURL=style.css.map */
