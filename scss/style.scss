@@ -88,6 +88,40 @@ body {
     }
 }
 
+#restartContainer {
+    margin-top: 20px;
+    text-align: center;
+
+    button {
+        padding: 10px 15px;
+        font-size: 1.2rem;
+        letter-spacing: 1px;
+        font-weight: 100;
+        cursor: pointer;
+        border: 1px solid #fff;
+        border-radius: 10px;
+        background-color: #16181f;
+        color: #fff;
+        text-transform: uppercase;
+        transition: all .2s ease;
+
+        &:hover {
+            color: #16181f;
+            border-color: #16181f;
+            background-color: lighten($color: #16181f, $amount: 10);
+        }
+        &:focus {
+            outline: none;
+        }
+        &:active {
+            background-color: red;
+            color: #fff;
+            border-color: #fff;            
+        }
+
+    }
+}
+
 .seat {
     background-color: #383b47;
     width: 25px;

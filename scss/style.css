@@ -119,6 +119,42 @@ body {
   margin-left: 20px;
 }
 
+#restartContainer {
+  margin-top: 20px;
+  text-align: center;
+}
+
+#restartContainer button {
+  padding: 10px 15px;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  font-weight: 100;
+  cursor: pointer;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  background-color: #16181f;
+  color: #fff;
+  text-transform: uppercase;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
+#restartContainer button:hover {
+  color: #16181f;
+  border-color: #16181f;
+  background-color: #2b2f3d;
+}
+
+#restartContainer button:focus {
+  outline: none;
+}
+
+#restartContainer button:active {
+  background-color: red;
+  color: #fff;
+  border-color: #fff;
+}
+
 .seat {
   background-color: #383b47;
   width: 25px;
