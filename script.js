@@ -1,4 +1,7 @@
 const seats = [...document.querySelectorAll('.row .seat')];
+const btnReset = document.querySelector('#restartContainer button');
+
+console.log(btnReset)
 
 
 makeSeatsOccupied(seats);
@@ -10,9 +13,6 @@ function makeSeatsOccupied(seats) {
             occupiedSeats.push(index);
     });
 
-    console.log(occupiedSeats);
-
-
     seats.forEach((seat, index) => {
         seat.classList = 'seat';
 
@@ -20,3 +20,6 @@ function makeSeatsOccupied(seats) {
             seat.classList = 'seat occupied';
     })
 }
+
+// event listeners
+btnReset.addEventListener('click', () => makeSeatsOccupied(seats));
