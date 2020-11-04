@@ -139,6 +139,14 @@ body {
     background-color: #bebbbb;
 }
 
+.row .seat:not([class="seat occupied"]) {
+    &:hover {
+        cursor: pointer;
+        // background-color: darken($color: #383b47, $amount: 5%);
+        transform: scale(1.15);
+    }
+}
+
 #ticketsContainer {
     text-align: center;
     font-size: 1rem;

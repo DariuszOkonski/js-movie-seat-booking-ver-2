@@ -172,6 +172,12 @@ body {
   background-color: #bebbbb;
 }
 
+.row .seat:not([class="seat occupied"]):hover {
+  cursor: pointer;
+  -webkit-transform: scale(1.15);
+          transform: scale(1.15);
+}
+
 #ticketsContainer {
   text-align: center;
   font-size: 1rem;

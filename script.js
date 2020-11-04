@@ -1,8 +1,6 @@
 const seats = [...document.querySelectorAll('.row .seat')];
 const btnReset = document.querySelector('#restartContainer button');
 
-console.log(btnReset)
-
 
 makeSeatsOccupied(seats);
 
