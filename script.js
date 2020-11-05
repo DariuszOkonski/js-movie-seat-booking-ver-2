@@ -1,27 +1,58 @@
 const seats = [...document.querySelectorAll('.row .seat')];
 const btnReset = document.querySelector('#restartContainer button');
 const movie = document.getElementById('movie');
+const amount = document.getElementById('amount');
+const total = document.getElementById('total');
 
 const tickets = {
     quantaty: 0,
     price: +movie[0].value,
     total: 0
 }
+displaySummary();
 
 seats.forEach(seat => {
     seat.addEventListener('click', selectSeat)
 });
 
+
+
 makeSeatsOccupied(seats);
 
 function selectSeat(e) {
     if(e.target.classList[1] !== 'occupied') {
-        console.log('free')
         e.target.classList.toggle('selected');
     }
-        
+    
+    countOccupiedSeats();
 }
 
+function countOccupiedSeats() {
+    tickets.quantaty = 0;
+    seats.forEach(seat => {
+        if(seat.classList.contains('selected'))
+            tickets.quantaty++;        
+    })
+
+    displaySummary();
+}
+
+function displaySummary() {
+    tickets.total = tickets.quantaty * tickets.price;
+
+    amount.innerText = tickets.quantaty;
+    total.innerText = tickets.total;
+}
+
+function resetTickets() {
+    movie[0].selected = 'selected';
+    tickets.quantaty = 0;
+    tickets.price = +movie[0].value;
+    tickets.total = 0;
+
+}
+
+// addListeners functions ================
 function makeSeatsOccupied(seats) {
     const occupiedSeats = [];
     seats.forEach((seat, index) => {
@@ -34,14 +65,19 @@ function makeSeatsOccupied(seats) {
 
         if(occupiedSeats.indexOf(index) > -1)
             seat.classList = 'seat occupied';
-    })
+    });
+
+    resetTickets();    
+    displaySummary();
 }
 
 function selectMovie(e) {
     tickets.price = +e.target.value
+
+    displaySummary();
 }
 
-// event listeners
+// event listeners ===
 btnReset.addEventListener('click', () => makeSeatsOccupied(seats));
 
 movie.addEventListener('change', selectMovie);
