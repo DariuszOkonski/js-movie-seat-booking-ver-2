@@ -9,15 +9,24 @@ const tickets = {
     price: +movie[0].value,
     total: 0
 }
+
+// loading ================
 displaySummary();
 
 seats.forEach(seat => {
     seat.addEventListener('click', selectSeat)
 });
 
-
-
 makeSeatsOccupied(seats);
+
+// functions ===============
+function addToLocalStorage() {
+    console.log('add to local storage')
+}
+
+function resetLocalStorage() {
+    console.log('reset local storage');
+}
 
 function selectSeat(e) {
     if(e.target.classList[1] !== 'occupied') {
@@ -25,6 +34,7 @@ function selectSeat(e) {
     }
     
     countOccupiedSeats();
+    addToLocalStorage();
 }
 
 function countOccupiedSeats() {
@@ -49,7 +59,6 @@ function resetTickets() {
     tickets.quantaty = 0;
     tickets.price = +movie[0].value;
     tickets.total = 0;
-
 }
 
 // addListeners functions ================
@@ -75,6 +84,7 @@ function selectMovie(e) {
     tickets.price = +e.target.value
 
     displaySummary();
+    addToLocalStorage();
 }
 
 // event listeners ===
