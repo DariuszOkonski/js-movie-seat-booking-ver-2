@@ -1,5 +1,12 @@
 const seats = [...document.querySelectorAll('.row .seat')];
 const btnReset = document.querySelector('#restartContainer button');
+const movie = document.getElementById('movie');
+
+const tickets = {
+    quantaty: 0,
+    price: +movie[0].value,
+    total: 0
+}
 
 seats.forEach(seat => {
     seat.addEventListener('click', selectSeat)
@@ -30,5 +37,11 @@ function makeSeatsOccupied(seats) {
     })
 }
 
+function selectMovie(e) {
+    tickets.price = +e.target.value
+}
+
 // event listeners
 btnReset.addEventListener('click', () => makeSeatsOccupied(seats));
+
+movie.addEventListener('change', selectMovie);
