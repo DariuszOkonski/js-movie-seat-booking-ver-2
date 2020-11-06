@@ -9,7 +9,10 @@ const tickets = {
     price: +movie[0].value,
     total: 0
 }
+
 let movieIndex = 0;
+let localSeats = [];
+
 
 // loading ================
 displaySummary();
@@ -22,8 +25,19 @@ makeSeatsOccupied(seats);
 
 // functions ===============
 function addToLocalStorage() {
-    console.log('movieIndex: ', movieIndex);
+    localSeats = [];
+
+    seats.forEach((seat) => {
+        localSeats.push(seat.classList.value);
+    })
+
     localStorage.setItem('movieIndex', movieIndex);
+    localStorage.setItem('localSeats', JSON.stringify(localSeats));
+}
+
+function readFromLocalStorage() {
+    movieIndex = localStorage.getItem('movieIndex');
+    localSeats = JSON.parse(localStorage.getItem('localSeats'));
 }
 
 function resetLocalStorage() {
