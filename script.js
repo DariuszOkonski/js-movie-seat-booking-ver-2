@@ -22,6 +22,7 @@ seats.forEach(seat => {
 });
 
 makeSeatsOccupied(seats);
+readFromLocalStorage();
 
 // functions ===============
 function addToLocalStorage() {
@@ -36,8 +37,25 @@ function addToLocalStorage() {
 }
 
 function readFromLocalStorage() {
-    movieIndex = localStorage.getItem('movieIndex');
+    console.log('read from localstorage')
+    movieIndex = localStorage.getItem('movieIndex') ? localStorage.getItem('movieIndex') : 0;
     localSeats = JSON.parse(localStorage.getItem('localSeats'));
+
+    if(movieIndex == null || localSeats == null)
+        return;
+
+
+    for (let index = 0; index < seats.length; index++) {
+        seats[index].classList = `${localSeats[index]}`;       
+    }
+
+    tickets.price = +movie[movieIndex].value;
+
+    //set movie index
+    movie[movieIndex].selected = 'selected';
+
+    //set price
+    countOccupiedSeats();
 }
 
 function resetLocalStorage() {
